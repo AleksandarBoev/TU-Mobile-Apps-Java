@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">HelloAndroidPractise</string>
+    <string name="send">Send</string>
+    <string name="textViewEnterName">Enter name:</string>
+    <string name="textViewEnterAge">Enter age:</string>
+
+    <string name="personNameDisplayTextView">Name: </string>
+    <string name="personAgeDisplayTextView">Age: </string>
+    <string name="defaultValueTextView">Default Value</string>
+</resources>
