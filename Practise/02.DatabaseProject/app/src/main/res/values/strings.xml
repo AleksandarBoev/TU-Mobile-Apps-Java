@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">DatabaseProject</string>
+    <string name="create_student">Create Student</string>
+</resources>
