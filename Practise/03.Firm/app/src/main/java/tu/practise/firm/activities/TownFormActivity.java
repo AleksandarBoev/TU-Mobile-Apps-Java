@@ -1,15 +1,22 @@
 package tu.practise.firm.activities;
 
-import androidx.appcompat.app.AppCompatActivity;
-import tu.practise.firm.classes.Person;
+import tu.practise.firm.domain.models.binding.TownBindingModel;
+import tu.practise.firm.exceptions.InvalidTownException;
+import tu.practise.firm.services.TownService;
+import tu.practise.firm.services.TownServiceImpl;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
 public class TownFormActivity extends BaseFormActivity {
+    private TownService townService;
+
     public TownFormActivity() {
-        int a = 5;
+        townService = ((FirmApplication)getApplication()).getTownService();
+    }
+
+    public TownFormActivity(TownService townService) { //for unit testing
+        this.townService = townService;
     }
 
     @Override
@@ -18,8 +25,27 @@ public class TownFormActivity extends BaseFormActivity {
         setContentView(R.layout.activity_town_form);
     }
 
-    public void goToMainActivity(View view) {
-        Intent intent = new Intent(this, MainActivity.class);
-        startActivity(intent);
+    @Override
+    public void cancel(View view) {
+        super.toMainActivity();
+    }
+
+    @Override
+    public void save(View view) {
+        String townName = super.getEditTextText(R.id.townNameEditText);
+        Integer townPostalCode = null;
+        try {
+            townPostalCode = Integer.parseInt(super.getEditTextText(R.id.townPostalCodeEditText).trim());
+        } catch (NumberFormatException nfe) {
+            super.setTextViewText(R.id.errorTextView, TownServiceImpl.INVALID_TOWN_POSTAL_CODE);
+            return;
+        }
+
+        TownBindingModel townBindingModel = new TownBindingModel(townName, townPostalCode);
+        try {
+            townService.save(townBindingModel);
+        } catch (InvalidTownException ite) {
+            super.setTextViewText(R.id.errorTextView, ite.getMessage());
+        }
     }
 }

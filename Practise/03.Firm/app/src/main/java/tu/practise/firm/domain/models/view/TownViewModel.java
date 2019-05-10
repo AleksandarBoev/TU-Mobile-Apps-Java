@@ -1,6 +1,6 @@
-package tu.practise.firm.classes;
+package tu.practise.firm.domain.models.view;
 
-public class PersonViewModel {
+public class TownViewModel {
     private String name;
 
     public String getName() {

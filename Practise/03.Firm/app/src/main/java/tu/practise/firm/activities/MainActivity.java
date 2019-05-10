@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.CheckedTextView;
 
 public class MainActivity extends AppCompatActivity {
     public MainActivity() {
@@ -20,5 +21,10 @@ public class MainActivity extends AppCompatActivity {
     public void goToTownForm(View view) {
         Intent intent = new Intent(this, TownFormActivity.class);
         startActivity(intent);
+    }
+
+    public void testCheckView(View view) {
+
+
     }
 }

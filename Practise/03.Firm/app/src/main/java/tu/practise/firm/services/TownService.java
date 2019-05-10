@@ -1,7 +1,7 @@
 package tu.practise.firm.services;
 
-import tu.practise.firm.classes.PersonBindingModel;
-import tu.practise.firm.classes.PersonViewModel;
+import tu.practise.firm.domain.models.binding.TownBindingModel;
+import tu.practise.firm.domain.models.view.TownViewModel;
 
-public interface TownService extends BaseService<PersonBindingModel, PersonViewModel, Integer> {
+public interface TownService extends BaseService<TownBindingModel, TownViewModel, Integer> {
 }
