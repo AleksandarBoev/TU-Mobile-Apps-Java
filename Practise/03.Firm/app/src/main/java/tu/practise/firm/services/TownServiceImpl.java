@@ -27,7 +27,7 @@ public class TownServiceImpl extends BaseFirmServiceImpl implements TownService 
                     " start with an upper case letter followed by lower case letters";
 
     public static final String INVALID_TOWN_POSTAL_CODE = "Postal code should be a 4 digit integer!";
-    public static final String TOWN_POSTAL_CODE_REGEX = "^[0-9]{4}$";
+    public static final int POSTAL_CODE_REQUIRED_LENGTH = 4;
 
     public TownServiceImpl(FirmDatabase firmDatabase) {
         super(firmDatabase);
@@ -71,6 +71,7 @@ public class TownServiceImpl extends BaseFirmServiceImpl implements TownService 
         validateTownNameNotNull(townBindingModel.getName());
         validateTownNameLength(townBindingModel.getName());
         validateTownNameFormat(townBindingModel.getName());
+        validateTownPostalCode(townBindingModel.getPostalCode());
     }
 
     private void validateTownNameNotNull(String townName) {
@@ -93,11 +94,8 @@ public class TownServiceImpl extends BaseFirmServiceImpl implements TownService 
             throw new InvalidTownException(INVALID_TOWN_NAME_FORMAT_MESSAGE);
     }
 
-    private void validateTownPostalCodeFormat(String postalCode) {
-        Pattern pattern = Pattern.compile(TOWN_POSTAL_CODE_REGEX);
-        Matcher matcher = pattern.matcher(postalCode);
-
-        if (!matcher.matches())
+    private void validateTownPostalCode(Integer postalCode) {
+        if (("" + postalCode).length() != POSTAL_CODE_REQUIRED_LENGTH)
             throw new InvalidTownException(INVALID_TOWN_POSTAL_CODE);
     }
 }

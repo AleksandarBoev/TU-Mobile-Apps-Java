@@ -12,7 +12,7 @@ public class TownFormActivity extends BaseFormActivity {
     private TownService townService;
 
     public TownFormActivity() {
-        townService = ((FirmApplication)getApplication()).getTownService();
+
     }
 
     public TownFormActivity(TownService townService) { //for unit testing
@@ -23,6 +23,8 @@ public class TownFormActivity extends BaseFormActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_town_form);
+        FirmApplication firmApplication = (FirmApplication) this.getApplication();
+        townService = firmApplication.getTownService();
     }
 
     @Override
@@ -44,6 +46,7 @@ public class TownFormActivity extends BaseFormActivity {
         TownBindingModel townBindingModel = new TownBindingModel(townName, townPostalCode);
         try {
             townService.save(townBindingModel);
+            super.toMainActivity();
         } catch (InvalidTownException ite) {
             super.setTextViewText(R.id.errorTextView, ite.getMessage());
         }
