@@ -1,14 +1,15 @@
 package tu.practise.firm.activities;
 
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 
-import java.util.ArrayList;
 import java.util.List;
 
-import androidx.appcompat.app.AppCompatActivity;
 
-public abstract class BaseViewActivity extends AppCompatActivity {
+public abstract class BaseViewActivity extends BaseActivity {
+    public abstract void visualize(View view);
+
     protected void fillSpinner(List<String> values, int spinnerId) {
         Spinner spinner = findViewById(spinnerId);
         ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this,

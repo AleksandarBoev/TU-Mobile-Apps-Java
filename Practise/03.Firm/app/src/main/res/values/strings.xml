@@ -4,6 +4,8 @@
     <string name="name">Name</string>
     <string name="save">Save</string>
     <string name="cancel">Cancel</string>
+    <string name="back">Back</string>
+    <string name="down_lines">____</string>
 
     <string name="town_form">Town Form</string>
     <string name="town_view">Town View</string>

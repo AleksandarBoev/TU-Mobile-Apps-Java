@@ -27,17 +27,14 @@ public class TownFormActivity extends BaseFormActivity {
         townService = firmApplication.getTownService();
     }
 
-    @Override
-    public void cancel(View view) {
-        super.toMainActivity();
-    }
+
 
     @Override
     public void save(View view) {
-        String townName = super.getEditTextText(R.id.townNameEditText);
+        String townName = super.getEditTextText(R.id.formTownNameEditText);
         Integer townPostalCode = null;
         try {
-            townPostalCode = Integer.parseInt(super.getEditTextText(R.id.townPostalCodeEditText).trim());
+            townPostalCode = Integer.parseInt(super.getEditTextText(R.id.formTownPostalCodeEditText).trim());
         } catch (NumberFormatException nfe) {
             super.setTextViewText(R.id.errorTextView, TownServiceImpl.INVALID_TOWN_POSTAL_CODE);
             return;
@@ -50,5 +47,10 @@ public class TownFormActivity extends BaseFormActivity {
         } catch (InvalidTownException ite) {
             super.setTextViewText(R.id.errorTextView, ite.getMessage());
         }
+    }
+
+    @Override
+    public void back(View view) {
+        super.toMainActivity();
     }
 }
