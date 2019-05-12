@@ -22,8 +22,13 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    public void goToTownForm(View view) {
+    public void goToTownFormActivity(View view) {
         Intent intent = new Intent(this, TownFormActivity.class);
+        startActivity(intent);
+    }
+
+    public void goToViewTownActivity(View view) {
+        Intent intent = new Intent(this, TownViewActivity.class);
         startActivity(intent);
     }
 }

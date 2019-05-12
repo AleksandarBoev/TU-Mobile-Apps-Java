@@ -1,8 +1,14 @@
 <resources>
     <string name="app_name">Firm</string>
+
+    <string name="name">Name</string>
     <string name="save">Save</string>
     <string name="cancel">Cancel</string>
+
     <string name="town_form">Town Form</string>
-    <string name="name">Name</string>
+    <string name="town_view">Town View</string>
     <string name="postal_code">Postal Code</string>
+    <string name="new_town">New Town</string>
+    <string name="view_towns">View Towns</string>
+    <string name="view_town">View Town</string>
 </resources>
