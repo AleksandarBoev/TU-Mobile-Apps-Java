@@ -13,4 +13,11 @@
     <string name="new_town">New Town</string>
     <string name="view_towns">View Towns</string>
     <string name="view_town">View Town</string>
+
+    <string name="department_form">Department From</string>
+    <string name="department_name">Department Name</string>
+    <string name="department_manager_id">Department Manager ID</string>
+    <string name="department_town_id">Department Town ID</string>
+    <string name="new_department">New Department</string>
+    <string name="view_departments">View Departments</string>
 </resources>

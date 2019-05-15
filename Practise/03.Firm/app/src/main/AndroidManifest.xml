@@ -10,7 +10,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".TownViewActivity"></activity>
+        <activity android:name=".DepartmentFormActivity"></activity>
+        <activity android:name=".TownViewActivity" />
         <activity android:name=".TownFormActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>

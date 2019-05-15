@@ -31,4 +31,9 @@ public class MainActivity extends AppCompatActivity {
         Intent intent = new Intent(this, TownViewActivity.class);
         startActivity(intent);
     }
+
+    public void goToDepartmentFormActivity(View view) {
+        Intent intent = new Intent(this, DepartmentFormActivity.class);
+        startActivity(intent);
+    }
 }
